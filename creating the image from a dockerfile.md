@@ -8,6 +8,9 @@ Dockerfiles have a specific syntax and resemble automation tools such as Ansible
 Time to build the new image, let's name it cassandra_template:
 sudo docker build -t cassandra_template .
 
+The build process will take some time, you can follow its progress. At the end, if there are no errors, the new imahe should be available. Check by running:
+docker images
+
 That was it, you can now start the containers with static IPs, configure the final settings and start the Cassandra service.
 
 
