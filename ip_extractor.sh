@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#this simple script can be executed on the host OS
+#to find the IP adresses of every active Cassandra container
+
 #make a list of Cassandra containers
 CONTAINERS=$(docker ps | grep cassandra | cut -f1 -d ' ')
 
