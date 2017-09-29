@@ -14,8 +14,8 @@ docker cp $CONT:/usr/local/cassandra/conf/cassandra.yaml cassandra.yaml
 #then edit the two lines of the configuration file and copy it into the container
 for i in $CONTAINERS; do
   IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $i)
-  sed -i "386s/listen_address: */listen_address: ${IP}/g" cassandra.yaml
-  sed -i "444s/rpc_address: */rpc_address: ${IP}/g" cassandra.yaml
+  sed -i "386s/listen_address:.*/listen_address: ${IP}/g" cassandra.yaml
+  sed -i "444s/rpc_address:.*/rpc_address: ${IP}/g" cassandra.yaml
   docker cp cassandra.yaml $i:/usr/local/cassandra/conf/cassandra.yaml
 done
 
